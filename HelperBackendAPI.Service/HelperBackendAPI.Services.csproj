@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../HelperBackendAPI.Entity/HelperBackendAPI.Entity.csproj" />
+    <ProjectReference Include="../HelperBackendAPI.Repository/HelperBackendAPI.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>
