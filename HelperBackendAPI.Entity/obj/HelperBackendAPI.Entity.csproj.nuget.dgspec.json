@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/a-kays/HelperBackendAPI/HerperBackendAPI/HelperBackendAPI.Entity/HelperBackendAPI.Entity.csproj": {}
+    "/Users/a-kays/HelperBackendAPI/HelperBackendAPI.Entity/HelperBackendAPI.Entity.csproj": {}
   },
   "projects": {
-    "/Users/a-kays/HelperBackendAPI/HerperBackendAPI/HelperBackendAPI.Entity/HelperBackendAPI.Entity.csproj": {
+    "/Users/a-kays/HelperBackendAPI/HelperBackendAPI.Entity/HelperBackendAPI.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/a-kays/HelperBackendAPI/HerperBackendAPI/HelperBackendAPI.Entity/HelperBackendAPI.Entity.csproj",
+        "projectUniqueName": "/Users/a-kays/HelperBackendAPI/HelperBackendAPI.Entity/HelperBackendAPI.Entity.csproj",
         "projectName": "HelperBackendAPI.Entity",
-        "projectPath": "/Users/a-kays/HelperBackendAPI/HerperBackendAPI/HelperBackendAPI.Entity/HelperBackendAPI.Entity.csproj",
+        "projectPath": "/Users/a-kays/HelperBackendAPI/HelperBackendAPI.Entity/HelperBackendAPI.Entity.csproj",
         "packagesPath": "/Users/a-kays/.nuget/packages/",
-        "outputPath": "/Users/a-kays/HelperBackendAPI/HerperBackendAPI/HelperBackendAPI.Entity/obj/",
+        "outputPath": "/Users/a-kays/HelperBackendAPI/HelperBackendAPI.Entity/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/a-kays/.nuget/NuGet/NuGet.Config"
@@ -43,6 +43,28 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
