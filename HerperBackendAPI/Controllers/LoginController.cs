@@ -18,19 +18,12 @@ namespace HerperBackendAPI.Controllers
             _loginRepository = loginRepository;
         }
 
-        [HttpGet]
-        public IActionResult Get()
-        {
-            Console.WriteLine("API was hit!");
-            return Ok("Test");
-        }
-
         [HttpPost]
-        public UserModel UserLogin(UserLoginModel userLoginModel)
+        public IActionResult UserLogin(UserLoginModel userLoginModel)
         {
             var post = _mapper.Map<User>(userLoginModel);
             var result = _loginRepository.UserAuthenticate(post).Result;
-            return _mapper.Map<UserModel>(result);
+            return Ok(result);
         }
     }
 }

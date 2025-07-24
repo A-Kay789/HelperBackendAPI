@@ -2,6 +2,7 @@ using System;
 using HelperBackendAPI.Entity.DataContext;
 using HelperBackendAPI.Entity.Entity;
 using HelperBackendAPI.Repository.Repository;
+using HelperBackendAPI.Services.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -28,7 +29,7 @@ public class LoginService : ILoginRepository
             {
                 id = result.Id,
                 email = result.Email,
-                
+                token = JwtService.GenerateJwtAuuthentication(result, _configuration)
             };
         }
         return null;

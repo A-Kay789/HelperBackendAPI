@@ -14,3 +14,4 @@ public class UserModel
     public DateTime? UpdatedDate { get; set; }
     public string? IsActive { get; set; }
 }
+
