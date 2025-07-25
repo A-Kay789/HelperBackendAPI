@@ -12,5 +12,7 @@ public class MapperConfig:Profile
         CreateMap<UserModel, User>().ReverseMap();
         CreateMap<UserLoginModel, User>();
         CreateMap<UserListModel, User>();
+
+        CreateMap<MasterServiceModel,MasterService>().ReverseMap();
     }
 }

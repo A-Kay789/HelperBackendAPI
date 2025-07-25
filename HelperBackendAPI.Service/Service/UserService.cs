@@ -20,25 +20,17 @@ public class UserService : IUserRepository
     }
     public async Task<User?> GetUser(int id)
     {
-        return await _applicationDBContext.Users.Where(x=>x.Id == id).FirstOrDefaultAsync();
+        return await _applicationDBContext.Users.Where(x => x.Id == id).FirstOrDefaultAsync();
     }
-    
+
     public async Task<User> CreateUser(User userInfo)
     {
-        var user = new User
-        {
-            FirstName = userInfo.FirstName,
-            LastName = userInfo.LastName,
-            Email = userInfo.Email,
-            Phone = userInfo.Phone,
-            Password = userInfo.Password,
-            IsActive = true,
-            IsDeleted = false,
-            CreatedDate = DateTime.Now
-        };
-        _applicationDBContext.Users.Add(user);
+        userInfo.IsActive = true;
+        userInfo.IsDeleted = false;
+        userInfo.CreatedDate = DateTime.Now;
+        _applicationDBContext.Users.Add(userInfo);
         await _applicationDBContext.SaveChangesAsync();
-        return user;
+        return userInfo;
     }
 
     public async Task<User> UpdateUser(User userInfo)

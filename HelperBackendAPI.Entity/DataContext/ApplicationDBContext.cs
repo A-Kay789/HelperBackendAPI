@@ -10,6 +10,9 @@ namespace HelperBackendAPI.Entity.DataContext
         {
         }
 
-        public DbSet<User> Users{ get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<ServiceProvider> ServiceProviders { get; set; }
+        public DbSet<MasterService> MasterService { get; set; }
+        public DbSet<SearchHistory> SearchHistory{ get; set; }
     }
 }

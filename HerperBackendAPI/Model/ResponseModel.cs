@@ -1,6 +1,6 @@
 using System;
 
-namespace HerperBackendAPI.Helpers;
+namespace HerperBackendAPI.Model;
 
 public class ResponseModel
 {

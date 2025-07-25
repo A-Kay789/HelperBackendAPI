@@ -2,7 +2,6 @@ using System.Net;
 using AutoMapper;
 using HelperBackendAPI.Entity.Entity;
 using HelperBackendAPI.Repository.Repository;
-using HerperBackendAPI.Helpers;
 using HerperBackendAPI.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
