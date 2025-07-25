@@ -2,6 +2,7 @@ using System.Text;
 using HelperBackendAPI.Entity.DataContext;
 using HelperBackendAPI.Repository.Repository;
 using HelperBackendAPI.Service.Service;
+using HelperBackendAPI.Services.Service;
 using HerperBackendAPI.Mapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +37,8 @@ builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 // Register Repository and Services 
 builder.Services.AddTransient<ILoginRepository, LoginService>();
+builder.Services.AddTransient<IUserRepository, UserService>();
+
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {

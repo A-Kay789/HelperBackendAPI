@@ -10,6 +10,7 @@ public class MapperConfig:Profile
     public MapperConfig()
     {
         CreateMap<UserModel, User>().ReverseMap();
-        CreateMap<UserLoginModel,User>();
+        CreateMap<UserLoginModel, User>();
+        CreateMap<UserListModel, User>();
     }
 }
