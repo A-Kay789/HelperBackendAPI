@@ -11,9 +11,17 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "My API",
+        Version = "v1"
+    });
+});
+
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -21,14 +29,6 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
-    options.Events = new JwtBearerEvents
-    {
-        OnAuthenticationFailed = context =>
-        {
-            Console.WriteLine("Authentication failed: " + context.Exception.Message);
-            return Task.CompletedTask;
-        }
-    };
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
@@ -58,13 +58,14 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwaggerUI(options =>
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
     {
-        options.SwaggerEndpoint("/v1.json", "Open Api V1");
-        options.RoutePrefix = "swagger";
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+        c.RoutePrefix = "swagger"; // Swagger UI available at /swagger
     });
 }
-app.UseCors(builder => builder
+app.UseCors(builders => builders
     .AllowAnyOrigin()
     .AllowAnyMethod()
     .AllowAnyHeader());
