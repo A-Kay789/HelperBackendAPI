@@ -4,17 +4,14 @@ using HelperBackendAPI.Entity.Entity;
 using HelperBackendAPI.Repository.Repository;
 using HelperBackendAPI.Services.Service;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace HelperBackendAPI.Service.Service;
 
 public class LoginService : ILoginRepository
 {
     private readonly ApplicationDBContext _applicationDBContext;
-    private readonly IConfiguration _configuration;
-    public LoginService(IConfiguration configuration, ApplicationDBContext applicationDBContext)
+    public LoginService(ApplicationDBContext applicationDBContext)
     {
-        _configuration = configuration;
         _applicationDBContext = applicationDBContext;
     }
 
@@ -29,7 +26,7 @@ public class LoginService : ILoginRepository
             {
                 id = result.Id,
                 email = result.Email,
-                token = JwtService.GenerateJwtAuuthentication(result, _configuration)
+                token = JwtService.GenerateJwtAuthentication(result)
             };
         }
         return null;

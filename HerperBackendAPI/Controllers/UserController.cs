@@ -4,7 +4,6 @@ using HelperBackendAPI.Entity.Entity;
 using HelperBackendAPI.Repository.Repository;
 using HerperBackendAPI.Model;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HerperBackendAPI.Controllers
